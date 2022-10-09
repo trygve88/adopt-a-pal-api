@@ -4,6 +4,7 @@ import com.example.adoptapal.models.Dog;
 import com.example.adoptapal.repositories.DogRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.Collection;
 
 @Service
@@ -45,4 +46,15 @@ public class DogServiceImp implements DogService {
         dogRepository.delete(entity);
     }
 
+    @Override
+    public Collection<Dog> getDogsWithSkill(Collection<Integer> skillIds) {
+        Collection<Dog> dogsWithSKill = new ArrayList<>();
+        Collection<Dog> allDogs = dogRepository.findAll();
+        for (Dog d: allDogs) {
+           if (d.hasSkills(skillIds)) {
+               dogsWithSKill.add(d);
+           }
+        }
+        return dogsWithSKill;
+    }
 }
