@@ -4,4 +4,4 @@ pluginManagement {
         mavenCentral()
     }
 }
-rootProject.name = 'lagaltBE'
+rootProject.name = 'adopt-a-pal'
