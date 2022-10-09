@@ -1,1 +1,7 @@
-rootProject.name = 'adopt-a-pal'
+pluginManagement {
+    repositories {
+        gradlePluginPortal()
+        mavenCentral()
+    }
+}
+rootProject.name = 'lagaltBE'
