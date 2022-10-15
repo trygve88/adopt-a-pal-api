@@ -20,6 +20,9 @@ public class Dog {
     @Column()
     private String name;
 
+    @Column()
+    private String breed;
+
     @ManyToMany(mappedBy = "dogs")
     @JsonIgnoreProperties("dogs")
     private Set<Skill> skills;
