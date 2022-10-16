@@ -30,7 +30,7 @@ public class DogController {
 
     @GetMapping("filter")
     public ResponseEntity<Collection<Dog>> getDogsByFilter(@RequestParam Collection<String> filters) {
-        System.out.println(filters);
+        System.out.println("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" + filters);
         return ResponseEntity.ok(dogService.findAll());
     }
 }
