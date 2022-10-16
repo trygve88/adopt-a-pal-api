@@ -27,4 +27,9 @@ public class DogController {
     public ResponseEntity<Collection<Dog>> getDogsWithSkill(@RequestParam Collection<Integer> skillIds) {
         return ResponseEntity.ok(dogService.getDogsWithSkill(skillIds));
     }
+
+    @GetMapping("filter")
+    public ResponseEntity<Collection<Dog>> getDogsByFilter(@RequestParam Collection<String> filters) {
+        return ResponseEntity.ok(dogService.findAll());
+    }
 }
