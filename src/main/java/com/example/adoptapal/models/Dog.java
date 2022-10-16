@@ -20,8 +20,8 @@ public class Dog {
     @Column()
     private String name;
 
-    @Column()
-    private String breed;
+    //@Column()
+    //private String breed;
 
     @Column()
     private String img_url;
@@ -29,6 +29,10 @@ public class Dog {
     @ManyToMany(mappedBy = "dogs")
     @JsonIgnoreProperties("dogs")
     private Set<Skill> skills;
+
+    @ManyToOne()
+    @JsonIgnoreProperties("dogs")
+    private Breed breed;
 
     public boolean hasSkills(Collection<Integer> skillIds) {
         // for each skillid -> check that this dog has the skill
