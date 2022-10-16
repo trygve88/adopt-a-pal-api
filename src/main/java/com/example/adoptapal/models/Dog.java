@@ -23,6 +23,9 @@ public class Dog {
     @Column()
     private String breed;
 
+    @Column()
+    private String img_url;
+
     @ManyToMany(mappedBy = "dogs")
     @JsonIgnoreProperties("dogs")
     private Set<Skill> skills;
