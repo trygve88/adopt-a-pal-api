@@ -60,14 +60,10 @@ public class DogServiceImp implements DogService {
 
     @Override
     public Collection<Dog> getDogsByFilter(Collection<String> filters) {
-        // make filters into skill ids and breed
         Collection<Integer> skillIds = new ArrayList<>();
         String breed = "";
         for (String filter: filters) {
-            System.out.println("filter: " + filter);
             if (filter.length()<3) {
-                System.out.print("filter.length()<3 ");
-                System.out.println(filter.length()<3 );
                 skillIds.add(Integer.parseInt(filter));
             }
             else {
@@ -89,14 +85,8 @@ public class DogServiceImp implements DogService {
     }
 
     public boolean skillCheck(Collection<Integer> skillIds, Dog dog) {
-        if (skillIds.size() == 0) {
-            System.out.println("NO SKILL REQ");
-            return true;
-        }
-        if (dog.hasSkills(skillIds)) {
-            System.out.println("DOG HAS SKILLS");
-            return true;
-        }
+        if (skillIds.size() == 0) return true;
+        if (dog.hasSkills(skillIds)) return true;
         return false;
     }
 
