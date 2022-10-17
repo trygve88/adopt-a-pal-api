@@ -10,4 +10,7 @@ import java.util.Collection;
 public interface DogService extends CrudService<Dog,Integer> {
 
     Collection<Dog> getDogsWithSkill(Collection<Integer> skillIds);
+
+    Collection<Dog> getDogsByFilter(Collection<String> filters);
+
 }

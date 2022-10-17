@@ -57,4 +57,30 @@ public class DogServiceImp implements DogService {
         }
         return dogsWithSKill;
     }
+
+    @Override
+    public Collection<Dog> getDogsByFilter(Collection<String> filters) {
+        // make filters into skill ids and breed
+        Collection<Integer> skillIds = new ArrayList<>();
+        String breed = "";
+        for (String filter: filters) {
+            String tab[] = filter.split("=");
+            String value = tab[1];
+            if (value.length()<3) {
+                skillIds.add(Integer.parseInt(value));
+            }
+            else {
+                breed = value;
+            }
+        }
+        // get dogs that match skill ids and breed
+        Collection<Dog> filterDogs = new ArrayList<>();
+        Collection<Dog> allDogs = dogRepository.findAll();
+        for (Dog d: allDogs) {
+            if (d.hasSkills(skillIds) && d.getBreed().getName().equals(breed)) {
+                filterDogs.add(d);
+            }
+        }
+        return filterDogs;
+    }
 }

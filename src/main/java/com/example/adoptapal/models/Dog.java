@@ -20,9 +20,6 @@ public class Dog {
     @Column()
     private String name;
 
-    //@Column()
-    //private String breed;
-
     @Column()
     private String img_url;
 
