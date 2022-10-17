@@ -64,13 +64,11 @@ public class DogServiceImp implements DogService {
         Collection<Integer> skillIds = new ArrayList<>();
         String breed = "";
         for (String filter: filters) {
-            String tab[] = filter.split("=");
-            String value = tab[1];
-            if (value.length()<3) {
-                skillIds.add(Integer.parseInt(value));
+            if (filter.length()<3) {
+                skillIds.add(Integer.parseInt(filter));
             }
             else {
-                breed = value;
+                breed = filter;
             }
         }
         // get dogs that match skill ids and breed
