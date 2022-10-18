@@ -38,9 +38,7 @@ public class SecurityConfig {
                 .authorizeRequests( auth -> auth
                         .anyRequest().authenticated() // (2)
                 )
-
                 .oauth2ResourceServer(OAuth2ResourceServerConfigurer::jwt)
-
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS)) // (3)
                 .httpBasic(Customizer.withDefaults()) // (4)
                 .build();
@@ -49,8 +47,8 @@ public class SecurityConfig {
     @Bean
     public InMemoryUserDetailsManager users() {
         return new InMemoryUserDetailsManager(
-                User.withUsername("dvega")
-                        .password("{noop}password")
+                User.withUsername("lagalt@outlook.com")
+                        .password("{noop}HemmeligPassord123!")
                         .authorities("read")
                         .build()
         );
