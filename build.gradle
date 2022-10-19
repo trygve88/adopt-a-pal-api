@@ -32,12 +32,6 @@ dependencies {
     annotationProcessor 'org.projectlombok:lombok'                              // lombok: @Data
     developmentOnly 'org.springframework.boot:spring-boot-devtools'             // devtools: auto restart on file change?
     testImplementation 'org.springframework.boot:spring-boot-starter-test'      // testing
-    //implementation 'org.springframework.boot:spring-boot-starter-security'      // security
-    //testImplementation 'org.springframework.security:spring-security-test'      // security-test
-    implementation 'org.springframework.boot:spring-boot-starter-oauth2-resource-server'    //security oauth2
-    annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
-    implementation 'org.springframework.security:spring-security-oauth2-jose:5.7.4'
-
 }
 
 tasks.named('test') {
