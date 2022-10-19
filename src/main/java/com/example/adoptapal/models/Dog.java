@@ -21,6 +21,9 @@ public class Dog {
     private String name;
 
     @Column()
+    private String description;
+
+    @Column()
     private String img_url;
 
     @ManyToMany(mappedBy = "dogs")
