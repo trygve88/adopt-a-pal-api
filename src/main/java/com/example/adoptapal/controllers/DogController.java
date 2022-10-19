@@ -32,4 +32,9 @@ public class DogController {
     public ResponseEntity<Collection<Dog>> getDogsByFilter(@RequestParam Collection<String> filters) {
         return ResponseEntity.ok(dogService.getDogsByFilter(filters));
     }
+
+    @GetMapping("{id}")
+    public ResponseEntity<Dog> getDogById(@PathVariable int id) {
+        return ResponseEntity.ok(dogService.findById(id));
+    }
 }
